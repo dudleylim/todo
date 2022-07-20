@@ -14,7 +14,7 @@ const TodoItem = () => {
                 'Content-Type': 'application/json'
             }
         })
-        navigate('/');
+        setTimeout(() => {navigate('/');}, 100);
     };
 
     const updateTask = async () => {
@@ -64,7 +64,7 @@ const TodoItem = () => {
         // in this logic, if user attempts to create task without body, it wont run any request methods and just navigate back
 
         // navigate back; might need to add setTimeout
-        navigate('/');
+        setTimeout(() => {navigate('/');}, 100);
     };
 
     return (
