@@ -19,7 +19,7 @@ const TodoList = () => {
 
     // make fetch request to api
     const getTasks = async () => {
-        let response = await fetch('/api/tasks/');
+        let response = await fetch('https://dudley-todo-app-api.herokuapp.com/api/tasks/');
         let data = await response.json();
         setTasks(data);
         console.log(data);

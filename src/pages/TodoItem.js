@@ -8,7 +8,7 @@ const TodoItem = () => {
     const navigate = useNavigate();
 
     const deleteTask = async () => {
-        await fetch(`/api/tasks/${taskId}/`, {
+        await fetch(`https://dudley-todo-app-api.herokuapp.com/api/tasks/${taskId}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ const TodoItem = () => {
     };
 
     const updateTask = async () => {
-        await fetch(`/api/tasks/${taskId}/`, {
+        await fetch(`https://dudley-todo-app-api.herokuapp.com/api/tasks/${taskId}/`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ const TodoItem = () => {
     };
 
     const createTask = async () => {
-        await fetch('/api/tasks/', {
+        await fetch('https://dudley-todo-app-api.herokuapp.com/api/tasks/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ const TodoItem = () => {
     useEffect(() => {
         // if task is new, do not getTask because it will fetch nothing
         const getTask = async () => {
-            let response = await fetch(`/api/tasks/${taskId}/`);
+            let response = await fetch(`https://dudley-todo-app-api.herokuapp.com/api/tasks/${taskId}/`);
             let data = await response.json();
             setTask(data);
             console.log(data);
